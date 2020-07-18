@@ -17,7 +17,7 @@
   $: completed = todos.filter(i => i.done).length;
 </script>
 
-<input type="text" :value={name} @keyup:enter={add} /> <br/>
+<input type="text" :value={name} @keyup|enter={add} /> <br/>
 
 {#each todos as item }
   <Item :item @remove={remove($index)} />
