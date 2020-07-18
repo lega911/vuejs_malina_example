@@ -34,7 +34,11 @@ export default {
 <template>
   <input type="text" v-model="name" @keyup.enter="add" /> <br/>
 
-  <item v-for="(item, index) in todos" :item="item" @remove="remove(index)"></item>
+  <template v-for="(item, index) in todos">
+    {{index}}:
+    <item :item="item" @remove="remove(index)"></item>
+    <br/>
+  </template>
 
   <template v-if="todos.length">
     Completed {{completed}} of {{todos.length}}
@@ -43,3 +47,7 @@ export default {
     No tasks yet
   </template>
 </template>
+
+<style scoped>
+  input {background-color: rgb(147, 208, 236); margin-bottom: 16px;}
+</style>

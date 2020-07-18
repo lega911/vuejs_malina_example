@@ -12,11 +12,9 @@ export default {
 </script>
 
 <template>
-  <div :class="{ inactive: item.done }">
-    <input type="checkbox" v-model="item.done" />
-    {{ item.name }}
-    <button @click="remove">Remove</button>
-  </div>
+  <input type="checkbox" v-model="item.done" />
+  <span :class="{ inactive: item.done }">{{ item.name }}</span>
+  <button @click="remove">Remove</button>
 </template>
 
 <style scoped>
