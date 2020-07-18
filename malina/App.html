@@ -1,0 +1,30 @@
+<script>
+  import Item from './Item.html'
+
+  let todos = [];
+  let name = '';
+
+  const add = () => {
+    if(!name) return;
+    todos.push({name});
+    name = '';
+  };
+
+  const remove = (i) => {
+    todos.splice(i, 1);
+  }
+
+  $: completed = todos.filter(i => i.done).length;
+</script>
+
+<input type="text" :value={name} @keyup:enter={add} /> <br/>
+
+{#each todos as item }
+  <Item :item @remove={remove($index)} />
+{/each}
+
+{#if todos.length }
+  Completed {completed} of {todos.length}
+{:else}
+  No tasks yet
+{/if}

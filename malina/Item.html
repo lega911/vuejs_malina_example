@@ -1,0 +1,15 @@
+<script>
+  export let item;
+
+  const remove = () => $emit('remove');
+</script>
+
+<div class:inactive={item.done}>
+  <input type="checkbox" :checked={item.done} />
+  { item.name }
+  <button @click:remove>Remove</button>
+</div>
+
+<style>
+  .inactive {text-decoration: line-through; color: gray;}
+</style>
