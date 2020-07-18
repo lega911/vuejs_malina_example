@@ -20,6 +20,7 @@
 <input type="text" :value={name} @keyup|enter={add} /> <br/>
 
 {#each todos as item }
+  {$index}:
   <Item :item @remove={remove($index)} />
 {/each}
 
