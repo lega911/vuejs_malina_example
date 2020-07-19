@@ -22,6 +22,7 @@
 {#each todos as item }
   {$index}:
   <Item :item @remove={remove($index)} />
+  <br/>
 {/each}
 
 {#if todos.length }
@@ -29,3 +30,7 @@
 {:else}
   No tasks yet
 {/if}
+
+<style>
+  input {background-color: rgb(147, 208, 236); margin-bottom: 16px;}
+</style>
