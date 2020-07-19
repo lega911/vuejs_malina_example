@@ -4,11 +4,9 @@
   const remove = () => $emit('remove');
 </script>
 
-<div class:inactive={item.done}>
-  <input type="checkbox" :checked={item.done} />
-  { item.name }
-  <button @click:remove>Remove</button>
-</div>
+<input type="checkbox" :checked={item.done} />
+<span class:inactive={item.done}>{item.name}</span>
+<button @click:remove>Remove</button>
 
 <style>
   .inactive {text-decoration: line-through; color: gray;}
