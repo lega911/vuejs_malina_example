@@ -19,9 +19,9 @@
 
 <input type="text" :value={name} @keyup|enter={add} /> <br/>
 
-{#each todos as item }
-  {$index}:
-  <Item :item @remove={remove($index)} />
+{#each todos as item, index }
+  {index}:
+  <Item :item @remove={remove(index)} />
   <br/>
 {/each}
 
